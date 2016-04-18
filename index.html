@@ -17,6 +17,7 @@
       <center>
 	<h1>J</h1>
 	<h2> The Programming Language </h2>
+	<h3>an overview by Nellie Spektor & Alexander Sosnovsky</h3>
       </center>
     </div>
   </div>
@@ -70,7 +71,7 @@
       <li> Boxed </li>
       <p>&nbsp&nbsp&nbsp&nbsp Boxes are declared like this: &lt;1 0 0 1 0 
       <p>+---------+</p>
-      <p>&nbsp|1 0 0 1 0|>&nbsp</p>
+      <p>&nbsp|1 0 0 1 0|&nbsp</p>
       <p>+---------+</p>
       </p>
 
@@ -84,8 +85,54 @@
     </div>
     <!-- THIS PART IS LEFT-->
     <h2>Rank</h2>
+    <ul>
+    <li>Rank refers to the number of dimensions and is very useful in J</li>
+    <li>
+        <ul>
+            <li>A scalar is of rank 0</li>
+            <li>A list of numbers is of rank 1</li>
+            <li>A table of rank 2</li>
+            <li>And so on.</li>
+        </ul>
+    </li>
+    <li>>>> M =: 2 3 $ 'abcdef'</li>
+    <li>>>> M</li>
+    <li>abc<br>def</li>
+    <li>M has two cells; each of rank 1.</li>
+    </ul>
     <h2>Tacit Programming</h2>
+    <table class="table">
+        <tr>
+            <th>Quicksort Regularly</th>
+            <th>Quicksort Tacitly</th>
+        </tr>
+        <tr>
+            <td>sel=: adverb def 'u # ['
+                <br>
+                   quicksort=: verb define
+                   <br>
+                  if. 1 >: #y do. y<br>
+                else.<br>
+                (quicksort y <sel e),(y =sel e),quicksort y >sel e=.y{~?#y
+                end.<br>
+                )
+            </td>
+            <td>
+                quicksort=: (($:@(<#[), (=#[), $:@(>#[)) ({~ ?@#)) ^: (1<#)
+                <br><br><b>
+                Tacit Programming involves composing functions together and not referring to any variables.</b>
+            </td>
+        </tr>
+    </table>
     <h2>Uses</h2>
+    <ul>
+        <li>Mathematical, statistical, and logical analysis of data.</li>
+        <li>Function-level and object-oriented programming.</li>
+        <li>Works well for network analysis.</li>
+        <li>Can be used in the case that the user wants to make their code unreadable for anyone who looks at it.</li>
+        <li>Also usable for websites.</li>
+        <li>J also has a relational database management system called Jd.</li>
+    </ul>
 
     <h2>Advantages and Disadvantages</h2>
     <div class="container">
